@@ -1,0 +1,52 @@
+.overlay {
+    position: absolute;
+    left: 0%;
+    top: 0%;
+    z-index:1;
+    height: 100%;
+    width: 100%;
+    visibility: hidden;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+} 
+
+$settingsWidth : 400px;
+
+.settings {
+    position: fixed;
+    left:0%;
+    width: $settingsWidth;
+    height: 100%;
+    background-color: #ffffff;
+    transition: 0.3s ease-in-out;
+    transform: translateX(-100%);
+    
+}
+
+.outside {
+  left: $settingsWidth;
+  height: 100%;
+  position: fixed;
+  width: 100%;
+}
+
+.overlayVisible {
+    visibility: visible;
+    opacity: 1;
+  
+    .settings {
+      transform: translateX(0%);
+    }
+  }
+
+.close {
+  
+  fill: black;
+  opacity: 0.7;
+  transition: opacity 0.1s ease-in;
+  cursor: pointer;
+
+  &:hover{
+    opacity: 1;
+  }
+}
