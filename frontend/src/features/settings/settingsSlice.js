@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 export const settingsSlice = createSlice({
     name: 'settings',
     initialState: {
-      value: 'https://onebruh.pythonanywhere.com/game?countGames=3&priceMore=0&priceLess=100000',
+      value: 'https://onebruh.pythonanywhere.com/api/game?countGames=3&priceMore=0&priceLess=100000',
     },
     reducers: {
       setNewSettings: (state, action) => {
