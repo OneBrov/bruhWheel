@@ -1,0 +1,20 @@
+
+
+.wheel {
+    width: 100%;
+    max-width: 1000px;
+}
+
+.winnerArrow {
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 15px solid #F8F9FA;
+    position: absolute;
+    right: 0px;
+    top: 50%;
+    transform:translateX(-100%) translateY(-50%) ;
+}
+
+.wheelContainer {
+    max-width: 1000px;
+}

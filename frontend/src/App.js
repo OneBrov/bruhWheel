@@ -24,8 +24,7 @@ function App() {
  
 
   React.useEffect ( ()=>{
-    if (rollCondition === true || !games.length) {
-            
+    if (rollCondition === true || !games.length) {   
       const getGames = async () => {
         try{
           const {data} = await axios({
@@ -38,7 +37,6 @@ function App() {
           alert(`Cant get games with the given parameters! ${err}`)
         }
       }
-      
       getGames()
     }
   },[settingsLink, rollCondition])
@@ -100,6 +98,7 @@ function App() {
     return height
   }
 
+   
   return (
     <>
       <SettingsCanvas onToggleSettings={() => setSettingsOpen(false)} settingsOpen={settingsOpen}/>
@@ -109,7 +108,7 @@ function App() {
           <div id="leftColumn" className="col-lg-3 "> 
             <h2 className="text-center pb-4">Rolled game</h2>
             <div className={`shadowBox winnerGame ${!rollCondition ? "winnerGameVisible" : ""}`} >
-              {winnerId >=0 ? 
+              {(winnerId >=0 && games[winnerId])? 
                 <GameCard 
                   game={games[winnerId]}
                   picHeight={setImageHeight()}
@@ -124,7 +123,8 @@ function App() {
             <div className="shadowBox p-3 position-relative w-100 " >
               <Wheel 
                 spinningTime='5s'
-                games={games}
+                  games={games}
+               // games={[{name:"aboba"}, {name:"abiba"}, {name:"bibuba"}]}
               />
               <button onClick={() => dispatch(setRollTrue())} 
               className={`rollButton btn p-0 ${rollCondition ? "rollButtonNotActive" : ""}`}>
@@ -135,8 +135,8 @@ function App() {
           <div id="rightColumn" className="col-lg-3 col">
             <h2 className="text-center pb-4">Game list</h2>
             <div className="shadowBox" >
-              {games.length ? 
-                games.map((game)=>
+              {games ? 
+                games.map((game)=> 
                   <GameCard
                     key={game.appid} 
                     game={game} 
