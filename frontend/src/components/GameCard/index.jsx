@@ -28,7 +28,7 @@ function GameCard({game, picHeight=100, descriptionCollapse=false}) {
 				<p> Negative reviews: {game.negative_count} </p>
 				<p> Metascore: {game.metascore} </p>
 				<p> Sold copies: {game.owners_count} </p>
-				<p> Price: {game.price} Rub</p>
+				<p> Price: {game.ru_price} Rub</p>
 				<p> Developer: {game.developer} </p>
 				<p> Publisher: {game.publisher} </p>
 				<p> Duration: {game.duration} {game.time_unit} {game.label}</p>

@@ -2,8 +2,10 @@
     position: absolute;
     left: 50%;
     top: 50%;
-    width:95px;
-    height:95px;
+    width:20%;
+    height:20%;
+    max-width: 100px;
+    max-height: 100px;
     transform: translate(-50%, -50% );
     border-radius: 50%;
     border: 1px solid black;
@@ -12,6 +14,13 @@
     cursor: pointer;
     color: white;
 
+    @media screen and (max-width:575px){
+        font-size: 22px;
+    }
+
+    @media screen and (max-width:400px){
+        font-size: 14px;
+    }
 }
 
 .winnerGame {

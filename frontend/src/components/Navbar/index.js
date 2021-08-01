@@ -18,19 +18,19 @@ function Navbar ({onToggleSettings}) {
                 </button>
                 <div id="navbarItems" className="collapse navbar-collapse">
                     
-                        <div className="d-flex"> 
-                            <ul className="list-unstyled fs-2"> 
-                                <li onClick={onToggleSettings} className={` fs-4 me-4 btn text-light d-flex ${styles.btn}`}>
+                        <div className=" my-2"> 
+                            <ul onClick={onToggleSettings} className="list-unstyled fs-2 d-flex justify-content-center"> 
+                                <li  className={`p-0 fs-4 me-4 btn text-light d-flex ${styles.btn}`}>
                                     Settings <img className="ms-2 my-auto" src={settings} alt="Settings" /> 
                                 </li>
                             </ul>
                         </div>
-                        <div>
-                            <ul className="list-unstyled my-auto fs-2">
-                                <li className={` fs-4 btn text-light ${styles.btn}`}>
-                                <a className="d-flex" href="#footer">
-                                    About <img className="ms-2 my-auto" width={24} height={24} src={about} alt="About"/> 
-                                </a> 
+                        <div className="my-2">
+                            <ul className="list-unstyled fs-2 d-flex justify-content-center"> 
+                                <li onClick={() => window.location.href = '#footer'} 
+                                    className={`p-0 fs-4 me-4 btn text-light d-flex ${styles.btn}`}
+                                >
+                                About <img className="ms-2 my-auto" src={about} height={24} width={24} alt="Settings" /> 
                                 </li>
                             </ul>
                         </div>

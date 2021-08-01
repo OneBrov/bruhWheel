@@ -17,19 +17,20 @@ function Wheel ({games, spinningTime}) {
             const radius = canvas.width /2
             const x = radius
             const y = radius
-            
+            context.lineWidth = 3;
             const splitAngle = 2 * Math.PI / splitCount
             for (let i=0; i< splitCount;i++){
                 context.beginPath()
                 context.moveTo(x, y)
                 context.arc(x, y, radius, i*splitAngle, (i+1)*splitAngle,false);
-                context.lineWidth = radius;
+                
                 let hueValue = i*15;
                 context.fillStyle = 'hsl(' + hueValue + ',70%, 60%)'; 
                 context.fill();
-                context.lineWidth = 2;
+                
                 context.strokeStyle = '#444';
                 context.stroke()
+                context.lineWidth = 2;
                 context.closePath()
               }
              

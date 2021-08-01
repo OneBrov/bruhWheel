@@ -74,8 +74,6 @@ function App() {
       }, 5000)
       setWheelRotate(rotate)
     }
-
-
 },[games])
 
 
@@ -120,7 +118,7 @@ function App() {
           </div>
           <div id="midColumn" className="col-lg-6 mb-4">
             <h2 className="text-center pb-4">Wheel</h2>
-            <div className="shadowBox p-3 position-relative w-100 " >
+            <div className="shadowBox p-3 position-relative w-100 overflow-hidden" >
               <Wheel 
                 spinningTime='5s'
                   games={games}
@@ -135,10 +133,11 @@ function App() {
           <div id="rightColumn" className="col-lg-3 col">
             <h2 className="text-center pb-4">Game list</h2>
             <div className="shadowBox" >
+              {console.log(games.map(game => game.name + ' '))}
               {games ? 
                 games.map((game)=> 
                   <GameCard
-                    key={game.appid} 
+                    key={game.id} 
                     game={game} 
                     picHeight={100}
                     descriptionCollapse
